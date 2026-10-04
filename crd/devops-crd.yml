@@ -1,0 +1,32 @@
+kind: CustomResourceDefinition
+apiVersion: apiextension.k8s.io/v1
+metadata:
+  name: devopsbatches
+spec:
+  group: swapniljain
+  names:
+    plural: devopsbatches
+    singular: devopsbatch
+    kind: DevOpsBatch
+    shortNames:
+      - junoon
+      - batches
+      - tws
+  scope: Namespaced
+  versions:
+  - name: v1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: string
+            properties:
+              name:
+                type: string
+                description: This is the name of the DevOps Batch
+              duration:
+                type: string
+                description: this is the duration of devops batch
